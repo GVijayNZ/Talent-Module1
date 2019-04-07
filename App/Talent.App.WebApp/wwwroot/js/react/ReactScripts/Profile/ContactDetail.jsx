@@ -44,6 +44,7 @@ export class IndividualDetailSection extends Component {
 
     handleChange(event) {
         const data = Object.assign({}, this.state.newContact)
+        console.log("dt", data)
         data[event.target.name] = event.target.value
         this.setState({
             newContact: data
@@ -54,7 +55,8 @@ export class IndividualDetailSection extends Component {
         console.log(this.props.componentId)
         console.log(this.state.newContact)
         const data = Object.assign({}, this.state.newContact)
-        this.props.controlFunc(this.props.componentId, data)
+        //this.props.controlFunc(this.props.componentId, data)
+        this.props.updateStateData(data)
         this.closeEdit()
     }
 

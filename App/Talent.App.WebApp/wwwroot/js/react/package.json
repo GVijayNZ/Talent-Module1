@@ -5,7 +5,9 @@
   "main": "app.js",
   "dependencies": {
     "draft-js": "^0.10.5",
+    "install": "^0.12.2",
     "moment": "^2.22.2",
+    "npm": "^6.9.0",
     "react": "^16.3.2",
     "react-ckeditor-component": "^1.1.0",
     "react-datepicker": "^1.6.0",
@@ -30,7 +32,7 @@
     "react-dom": "^16.3.2",
     "react-tag-input": "^5.0.2",
     "semantic-ui-react": "^0.81.3",
-    "webpack": "^4.29.5",
+    "webpack": "^4.5.0",
     "webpack-cli": "^3.2.3"
   }
 }

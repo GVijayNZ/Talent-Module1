@@ -163,6 +163,7 @@ namespace Talent.Services.Profile.Controllers
         {
             //Your code here;
             throw new NotImplementedException();
+           
         }
 
         [HttpGet("getSkill")]
@@ -238,12 +239,27 @@ namespace Talent.Services.Profile.Controllers
             return Json(new { profilePath = profileUrl });
         }
 
+        
         [HttpPost("updateProfilePhoto")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "talent")]
         public async Task<ActionResult> UpdateProfilePhoto()
         {
             //Your code here;
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            IFormFile file = Request.Form.Files[0];
+
+            if (file.Length > 0)
+            {
+                if (await _profileService.UpdateTalentPhoto(_userAppContext.CurrentUserId, file))
+                {
+                    return Json(new { Success = true, Message = "File saved successfully" });
+                }
+            }
+
+            return Json(new { Success = false });
+
+
+
         }
 
         [HttpPost("updateTalentCV")]

@@ -11,6 +11,7 @@ namespace Talent.Common.Contracts
         Task<string> SaveFile(IFormFile file, FileType type);
         Task<bool> DeleteFile(string id, FileType type);
         Task<string> GetFileURL(string id, FileType type);
+        Task<string> UpdateFileURL(string id, FileType type);
     }
 
     public enum FileType
@@ -19,4 +20,5 @@ namespace Talent.Common.Contracts
         UserVideo = 2,
         UserCV = 3
     }
+
 }

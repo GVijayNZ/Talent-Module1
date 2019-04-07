@@ -41,10 +41,11 @@ export default class EmployeeProfile extends React.Component {
         let loaderData = this.state.loaderData;
         loaderData.allowedUsers.push("Employer");
         loaderData.allowedUsers.push("Recruiter");
-        loaderData.isLoading = false;
+        loaderData.isLoading = false;//restrict all components to be loaded initially. loaded whenever needed
         this.setState({ loaderData, })
     }
 
+    //default state to load data in DOM in beginning
     componentDidMount() {
         this.loadData()
     }
